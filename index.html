@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map Project</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="initialize()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="well well-lg" id="temperature-box"></div>
+            </div>    
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="well">
+                    <input class="form-control" placeholder="Search" type="search" data-bind="value: query, valueUpdate: 'input'" autocomplete="off">
+                </div>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div class="well" id="map_canvas"></div>
+            </div>    
+            <div class="col-xs-12 col-sm4 col-md-4 col-lg-4">
+                <ul data-bind="foreach: myPlaces">
+                    <a href="#"><li data-bind="text: name, click: showContent"></li></a>
+                </ul>    
+            </div>                
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well" id="street_view">Click marker for street view.</div>
+            </div>
+        </div>
+    </div>                        
+    <script src="js/knockout-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4v1fSPuDXwpfAyI_B5JXqH0r-d5OrSwc&v=3&callback=initialize"></script>
+</body>
+</html>
